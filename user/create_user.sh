@@ -46,5 +46,5 @@ adduser $username --disabled-password;
 # Assign group for user
 if [[ ! -z "$group" ]]; then
   echo "Add user $username into $group group";
-  usermod –a –G $group $username;
+  usermod -a -G $group $username;
 fi
