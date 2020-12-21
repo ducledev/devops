@@ -41,7 +41,7 @@ echo "Create Username: $username, Group: $group";
 if [[ -z $username ]]; then echo "-u username is required"; exit 1; fi
 # Add a new user, use --comment option as FullName
 echo "Add user without password: $username";
-adduser $username --disabled-password --comment "$username";
+adduser $username --disabled-password;
 
 # Assign group for user
 if [[ ! -z "$group" ]]; then
