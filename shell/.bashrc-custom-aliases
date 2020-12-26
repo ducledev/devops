@@ -1,0 +1,33 @@
+# reload shell bash
+alias reloadshell='source $HOME/.bashrc'
+
+# Tmux aliases
+alias tmuxattach='tmux attach-session -t'
+alias tmuxls='tmux ls'
+TMUX_HELP_CONTENT=$(cat <<EOM
+ \n 
+ Ctrl+B > c (new window)			\n
+ Ctrl+B > $ (name your session)		\n
+ Ctrl+B > , (renames a window)		\n
+ Ctrl+B > d (detach from your session)	\n
+ Ctrl+B > 0 (switch to window 0 by number)	\n
+ Ctrl+B > % (split current pane horizontally into two panes \n
+ Ctrl+B > o (go to the next pane)
+ Ctrl+B > x (close the current pane)
+EOM
+)
+alias tmuxhelp='echo -e $TMUX_HELP_CONTENT'
+
+# others
+alias cdssh='cd ~/.ssh'
+
+COLOR_1="\033[00;31m";
+ENDCOLOR_1="\033[00m";
+function format_string_c() {
+  text=$1;
+  echo "${COLOR_1}$text${ENDCOLOR_1}";
+}
+
+# Git aliases
+alias gitconfig_d="git config user.email 'code@ducle.dev'; git config user.name 'Duc Le'; git config --list --local | grep -E 'email|name'; echo -e 'Done git config for $(format_string_c code@ducle.dev)'; "
+
