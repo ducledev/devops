@@ -31,3 +31,7 @@ function format_string_c() {
 # Git aliases
 alias gitconfig_d="git config user.email 'code@ducle.dev'; git config user.name 'Duc Le'; git config --list --local | grep -E 'email|name'; echo -e 'Done git config for $(format_string_c code@ducle.dev)'; "
 
+# Common aliases
+alias l='ls -ltr'
+
+
