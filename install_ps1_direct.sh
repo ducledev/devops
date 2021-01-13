@@ -11,7 +11,7 @@ cat > $NEW_RC_PATH << END_OF_FILE
 
 function GitBranch() {
     git symbolic-ref --short HEAD >& /dev/null
-    if [ $? -eq 0 ]; then
+    if [ \$? -eq 0 ]; then
         git symbolic-ref --short HEAD
     fi
 }
