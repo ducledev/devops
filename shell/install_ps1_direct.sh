@@ -1,14 +1,13 @@
 #!/bin/bash
 
 set -e # halt if error occurs
-s=$BASH_SOURCE ; s=$(dirname "$s") ; s=$(cd "$s" && pwd) ; SCRIPT_HOME="$s"
-echo $SCRIPT_HOME;
 
 BASHRC_LOCATION="$HOME/.bashrc"
 
 f=".bashrc-ps1"
+NEW_RC_PATH="$HOME/$f"
 
-cat <<EOT > "$HOME/$f"
+cat <<EOT > $NEW_RC_PATH
 
 function GitBranch() {
     git symbolic-ref --short HEAD >& /dev/null
