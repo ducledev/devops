@@ -7,7 +7,7 @@ BASHRC_LOCATION="$HOME/.bashrc"
 f=".bashrc-ps1"
 NEW_RC_PATH="$HOME/$f"
 
-cat <<EOT > $NEW_RC_PATH
+cat > $NEW_RC_PATH << END_OF_FILE 
 
 function GitBranch() {
     git symbolic-ref --short HEAD >& /dev/null
@@ -19,7 +19,7 @@ function GitBranch() {
 PS1='\n╭\[\e[33m\]\u\[\e[m\]@\[\033[00;32m\]\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[00m\] \[\e[31m\]$(GitBranch)\[\e[m\]\n╰\[\033[01;37m\]\h\[\033[00m\] \$ '
 
 
-EOT
+END_OF_FILE
 
 # ================== Add ~/.bashrc-ps1 into ~/.bashrc
 BASHRC_COMMON_STRING=$(cat  <<EOM
