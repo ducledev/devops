@@ -7,7 +7,20 @@ echo $SCRIPT_HOME;
 BASHRC_LOCATION="$HOME/.bashrc"
 
 f=".bashrc-ps1"
-cat "$SCRIPT_HOME/$f" > "$HOME/$f"
+
+cat <<EOT > "$HOME/$f"
+
+function GitBranch() {
+    git symbolic-ref --short HEAD >& /dev/null
+    if [ $? -eq 0 ]; then
+        git symbolic-ref --short HEAD
+    fi
+}
+
+PS1='\n╭\[\e[33m\]\u\[\e[m\]@\[\033[00;32m\]\h\[\033[00m\]:\[\033[00;34m\]\w\[\033[00m\] \[\e[31m\]$(GitBranch)\[\e[m\]\n╰\[\033[01;37m\]\h\[\033[00m\] \$ '
+
+
+EOT
 
 # ================== Add ~/.bashrc-ps1 into ~/.bashrc
 BASHRC_COMMON_STRING=$(cat  <<EOM
