@@ -39,15 +39,31 @@ alias kgs='kubectl get services'
 alias kgn='kubectl get nodes'
 alias kgns='kubectl get namespaces'
 alias kgall='kubectl get all'
+alias kgi='kubectl get ingress'
+alias kgc='kubectl get configmap'
+alias kgsec='kubectl get secret'
+alias kgpv='kubectl get persistentvolume'
+alias kgpvc='kubectl get persistentvolumeclaim'
+alias kga='kubectl get all'
+
 alias kdp='kubectl describe pod'
 alias kdd='kubectl describe deployment'
 alias kds='kubectl describe service'
+
 alias kl='kubectl logs'
 alias kex='kubectl exec -it'
+
 alias kns='kubectl config set-context --current --namespace'
 alias kctx='kubectl config use-context'
 alias kcurrent='kubectl config current-context'
 alias kctxs='kubectl config get-contexts'
+
+alias krr='kubectl rollout restart'
+alias krrd='kubectl rollout restart deployment'
+
+alias kaf='kubectl apply -f'
+alias kdf='kubectl delete -f'
+
 KUBE_HELP_CONTENT=\$(cat <<EOM
  \n
  k           = kubectl                                    \n
@@ -57,11 +73,26 @@ KUBE_HELP_CONTENT=\$(cat <<EOM
  kgn         = kubectl get nodes                          \n
  kgns        = kubectl get namespaces                     \n
  kgall       = kubectl get all                            \n
+ kgi         = kubectl get ingress                        \n
+ kgc         = kubectl get configmap                      \n
+ kgsec       = kubectl get secret                         \n
+ kgpv        = kubectl get persistentvolume               \n
+ kgpvc       = kubectl get persistentvolumeclaim          \n
+ kga         = kubectl get all                            \n
+ \n
  kdp [pod]   = kubectl describe pod                       \n
  kdd [depl]  = kubectl describe deployment                \n
  kds [svc]   = kubectl describe service                   \n
+ \n
  kl [pod]    = kubectl logs                               \n
  kex [pod]   = kubectl exec -it                           \n
+ \n
+ krr         = kubectl rollout restart                    \n
+ krrd        = kubectl rollout restart deployment         \n
+ \n
+ kaf [file]  = kubectl apply -f                           \n
+ kdf [file]  = kubectl delete -f                          \n
+ \n
  kns [ns]    = kubectl config set-context --current --namespace \n
  kctx [ctx]  = kubectl config use-context                 \n
  kcurrent    = kubectl config current-context             \n
